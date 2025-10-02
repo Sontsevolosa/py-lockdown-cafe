@@ -1,8 +1,11 @@
-from app.errors import VaccineError, NotWearingMaskError
+from app.errors import (
+    VaccineError, NotWearingMaskError
+)
+
 from app.cafe import Cafe
 
 
-def go_to_cafe(friends: list, cafe: Cafe) -> str | None:
+def go_to_cafe(friends: list[dict], cafe: Cafe) -> str:
     problems_with_vaccination_count = 0
     masks_to_buy = 0
 
