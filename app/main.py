@@ -14,15 +14,13 @@ def go_to_cafe(friends: list[dict], cafe: Cafe) -> str:
             cafe.visit_cafe(friend)
         except VaccineError:
             problems_with_vaccination_count += 1
-            print("You should be vaccinated!")
         except NotWearingMaskError:
-            print("You should wear a mask!")
             masks_to_buy += 1
 
     if problems_with_vaccination_count:
         return "All friends should be vaccinated"
 
-    if masks_to_buy > 0:
+    if masks_to_buy:
         return f"Friends should buy {masks_to_buy} masks"
 
     return f"Friends can go to {cafe.name}"
